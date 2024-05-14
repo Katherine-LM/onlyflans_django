@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+
+{% block title %} Acerca de OnlyFlans {% endblock title %}
+{% block contenido %}
+<div class="container">
+    <div class="content">
+        {% block content %}
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Enviar</button>
+        </form>
+
+        {% endblock %}
+    </div>
+</div>
+{% endblock contenido%}
