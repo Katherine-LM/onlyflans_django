@@ -1,18 +1,36 @@
-{% extends 'base.html'%}
-
-{% block title %} Acerca de OnlyFlans {% endblock title %}
-{% block contenido %}
+{% extends 'base.html' %}
+{% block content %}
 <div class="container">
-    <div class="content">
-        {% block content %}
-
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Enviar</button>
-        </form>
-
-        {% endblock %}
+    <h1 class="text-white">Contáctanos 😃</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="border border-dark p-4 text-center">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <input type="text" name="customer_name" class="form-control" placeholder="Ingrese su nombre">
+                        {% if form.customer_name.errors %}
+                        <div class="text-danger">{{ form.customer_name.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="customer_email" class="form-control"
+                            placeholder="Ingrese su correo electrónico">
+                        {% if form.customer_email.errors %}
+                        <div class="text-danger">{{ form.customer_email.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <textarea name="message" class="form-control" rows="4"
+                            placeholder="Ingrese su mensaje"></textarea>
+                        {% if form.message.errors %}
+                        <div class="text-danger">{{ form.message.errors }}</div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
-{% endblock contenido%}
+{% endblock %}
