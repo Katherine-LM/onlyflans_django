@@ -2,12 +2,13 @@
 
 {% block content %}
 <div class="container">
+    <h4 class="p-2">¡Únete a nuestra comunidad! Al iniciar sesión como administrador, tendrás acceso a funciones especiales y privilegios únicos para gestionar tu experiencia con nuestros deliciosos flanes. Desde la personalización de pedidos hasta el seguimiento de ventas y estadísticas, estamos aquí para ayudarte a llevar tu negocio de flanes al siguiente nivel.</h4>
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card mt-5">
-                <div class="card-body">
+                <div class="card-body" style="background-color: #d8c0bf;">
                     <h2 class="card-title text-center">Iniciar Sesión</h2>
-                    <form method="post">
+                    <form method="post" class="p-3" style="background-color: #d8c0bf;">
                         {% csrf_token %}
                         <div class="mb-3">
                             <input type="text" name="username" id="id_username" class="form-control"
